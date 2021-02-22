@@ -105,7 +105,6 @@ test_bow_features = p1.extract_bow_feature_vectors(test_texts, dictionary)
 # test_bow_features and test_labels.
 #-------------------------------------------------------------------------------
 
-# Your code here
 train_acc, val_acc = p1.classifier_accuracy(
         p1.pegasos,
         train_bow_features,
@@ -122,7 +121,7 @@ print(train_acc, val_acc)
 #-------------------------------------------------------------------------------
 current_theta, _ = p1.pegasos(train_bow_features, train_labels, 25, 0.01)
 
-best_theta = current_theta # Your code here
+best_theta = current_theta 
 wordlist   = [word for (idx, word) in sorted(zip(dictionary.values(), dictionary.keys()))]
 sorted_word_features = utils.most_explanatory_word(best_theta, wordlist)
 print("Most Explanatory Word Features")
